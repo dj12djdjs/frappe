@@ -11,10 +11,19 @@
 	{%- endif -%}
 	<style>
 	{{ css }}
+	@media print {
+		.no-print-custom {
+			display: none;
+		}
+	}
 	</style>
 </head>
 <body>
 	<div class="print-format-gutter">
+	    <div class="no-print-custom">
+		<a href="https://dev2.partsup.ca">Back to Proformas</a>
+		<button onclick="window.print()">Print</button>
+            </div>
 	    <div class="print-format">
 		{{ body }}
 	    </div>
